@@ -1,0 +1,36 @@
+.productContainer{
+  margin-top: 7rem;
+}
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: rgb(39, 37, 37);
+  .product {
+    background-color: white;
+    // border: 1px solid rgba(0,0,0,.2);
+    border-radius: 10px;
+    img {
+      width: 100%;
+      height: 40vh;
+      border-radius: 10px;
+    }
+    h3 {
+      padding-left: 1rem;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: blue;
+    }
+    p {
+      padding:0 1rem;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+.product:hover {
+  transform: scale(1.1, 1.1);
+  transition: all 1s ease-in-out;
+}
