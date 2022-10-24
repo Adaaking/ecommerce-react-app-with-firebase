@@ -62,7 +62,7 @@ const ProductDetail = () => {
                   quantity: quantity,
                 })
               );
-              navigate('/cart')
+              // navigate('/cart')
              }
             }
           >

@@ -7,13 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { loadingActions } from "../../redux/features/LoadingSlice";
 
 const Cart = () => {
-  const [carts,setCarts] = useState([])
+  const carts = useSelector((state) => state.cartReducer.carts);
+  const user = useSelector((state) => state.loginReducer.currentUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
- useEffect(() => {
-       const cart = JSON.parse(localStorage.getItem("carts"))
-       setCarts(cart)
-  },[carts.length,dispatch])
+
   let total = 0;
   carts.forEach((cartItem) => {
     total += cartItem.totalPrice;
@@ -50,19 +48,19 @@ const Cart = () => {
             ))}
           </div>
           <button
-        style={{
-          padding: "10px",
-          backgroundColor: "black",
-          color: "white",
-          fontSize: "15px",
-          cursor: "pointer",
-          width:"20%",
-          margin:"5% 20%"
-        }}
-        onClick={() => navigate(-2)}
-      >
-        back to shopping
-      </button>
+            style={{
+              padding: "10px",
+              backgroundColor: "black",
+              color: "white",
+              fontSize: "15px",
+              cursor: "pointer",
+              width: "20%",
+              margin: "5% 20%",
+            }}
+            onClick={() => navigate("/")}
+          >
+            back to shopping
+          </button>
         </div>
       ) : (
         <div className="emptyOrder">
@@ -78,7 +76,11 @@ const Cart = () => {
             <h3>discount: 0.00 birr</h3>
             <h3>total : {total} birr</h3>
           </div>
-          <button>CHECK OUT NOW</button>
+          {user ? (
+            <button>CHECK OUT NOW</button>
+          ) : (
+            <button onClick={() => navigate("/login")}>LOGIN FIRST</button>
+          )}
         </div>
       )}
     </div>

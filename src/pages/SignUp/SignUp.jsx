@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import myVideo from "../../utils/vedios/animation.mp4";
+import back from "../../utils/images/back5.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { collection, addDoc,doc,setDoc, serverTimestamp } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -42,8 +42,8 @@ const SignUp = () => {
   };
   return (
     <div className="signUp">
-      <div className="video">
-        <video src={myVideo} autoPlay muted loop />
+      <div className="image">
+        <img src={back}/>
       </div>
       <form onSubmit={handleCreate}>
         <input

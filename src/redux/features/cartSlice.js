@@ -5,7 +5,8 @@ import { loadingActions } from "./LoadingSlice";
 const cartSlice = createSlice({
     name:"carts",
     initialState:{
-        carts: JSON.parse(localStorage.getItem("carts") || "[]"),
+        showCart:false,
+        carts: []
     },
     reducers:{
         addToCart:(state,action)=>{
@@ -14,8 +15,6 @@ const cartSlice = createSlice({
             if(existingItem){
                 existingItem.quantity = newItem.quantity;
                 existingItem.totalPrice = newItem.price * newItem.quantity;
-                localStorage.setItem("carts",JSON.stringify(state.carts))
-
             }else{
                 state.carts.push({
                     id:newItem.id,
@@ -25,12 +24,32 @@ const cartSlice = createSlice({
                     totalPrice: newItem.price * newItem.quantity,
                     img:newItem.img,  
                 })
-                localStorage.setItem("carts",JSON.stringify(state.carts))
             }
         },
+        increaseItem: (state,action) =>{
+            const newItem = action.payload;
+            const existingItem = state.carts.find((item) => item.id === newItem.id);
+            if(existingItem){
+                existingItem.quantity++;
+                existingItem.totalPrice += newItem.price;
+            }
+        },
+        decreaseItem: (state,action) =>{
+            const id = action.payload;
+            const existingItem = state.carts.find(item => item.id === id);
+            if(existingItem.quantity === 1){
+                state.carts = state.carts.filter(item => item.id !== id);
+                existingItem.quantity--
+            }else{
+                existingItem.quantity--;
+                existingItem.totalPrice -= existingItem.price;
+            }
+        },
+        showCart:(state) => {
+            state.showCart = !state.showCart
+        },
         removeItem:(state,action) => {
-            const carts = state.carts.filter((item) => item.id !== action.payload.id);
-            localStorage.setItem("carts",JSON.stringify(carts))
+            state.carts = state.carts.filter((item) => item.id !== action.payload.id);
         }
     }
 })

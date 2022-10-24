@@ -5,6 +5,8 @@ import Sidebar from '../../sidebar/Sidebar'
 import { useDispatch, useSelector } from 'react-redux'
 import { sidebarActions } from '../../redux/features/sidebarSlice'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
+import CartSidebar from '../../cartSidebar/CartSidebar'
+import { cartActions } from '../../redux/features/cartSlice'
 const Navbar = () => {
   const items = useSelector(state => state.cartReducer.carts)
   const dispatch = useDispatch()
@@ -25,8 +27,9 @@ const Navbar = () => {
             <Link to="/login">Login</Link>
         </div>
         <div className='cartbtn'>
-          <button onClick={() => navigate('/cart')}>Cart: <span style={{color:"red"}}>{items.length}</span></button>
+          <button onClick={()=>dispatch(cartActions.showCart())}>Cart: <span style={{color:"red"}}>{items.length}</span></button>
         </div>
+        <CartSidebar />
     </div>
   )
 }

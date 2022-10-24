@@ -3,7 +3,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 import "./login.scss";
 import { auth } from "../../firebase/firebase";
-import myVideo from "../../utils/vedios/animation.mp4";
+import back from "../../utils/images/back5.jpg";
 import { useDispatch } from "react-redux";
 import { loginActions } from "../../redux/features/loginSlice";
 import { useNavigate } from "react-router-dom";
@@ -30,8 +30,8 @@ const Login = () => {
   };
   return (
     <div className="loginContainer">
-      <div className="video">
-        <video src={myVideo} autoPlay muted loop />
+      <div className="image">
+        <img src={back}/>
       </div>
       <form onSubmit={handleSubmit}>
         <input
