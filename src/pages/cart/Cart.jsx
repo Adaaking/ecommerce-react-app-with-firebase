@@ -71,10 +71,10 @@ const Cart = () => {
       {carts.length > 0 && (
         <div className="checkOut">
           <div>
-            <h1>Cart Total</h1>
-            <h3>subtotal: {total} birr</h3>
-            <h3>discount: 0.00 birr</h3>
-            <h3>total : {total} birr</h3>
+            <h1 style={{fontFamily:'Fuzzy Bubbles'}}>Cart Total</h1>
+            <h3 style={{fontFamily:'Fuzzy Bubbles'}}>subtotal: {total} birr</h3>
+            <h3 style={{fontFamily:'Fuzzy Bubbles'}}>discount: 0.00 birr</h3>
+            <h3 style={{fontFamily:'Fuzzy Bubbles'}}>total : {total} birr</h3>
           </div>
           {user ? (
             <button>CHECK OUT NOW</button>

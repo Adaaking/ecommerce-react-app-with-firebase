@@ -1,15 +1,14 @@
-import { useSelect } from "@mui/base";
+
 import { collection, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { useDispatch} from "react-redux";
+import { Link,useParams } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { loadingActions } from "../../redux/features/LoadingSlice";
 import Product from "./Product";
 import "./products.scss";
 const Products = () => {
   const [products, setProducts] = useState([]);
-  // const loading = useSelector(state => state.loader.IsLoading)
   const dispatch = useDispatch()
   const navigate = useDispatch()
   const params = useParams();
@@ -25,6 +24,7 @@ const Products = () => {
               ...doc.data(),
               id: doc.id,
             });
+            localStorage.setItem('products',JSON.stringify(products))
             const NewProducts = products.filter(
               (product) => product.category === params.category
             );

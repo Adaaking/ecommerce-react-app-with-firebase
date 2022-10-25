@@ -10,6 +10,7 @@ import Navbar from './pages/Navbar/Navbar';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Products from './pages/products/Products';
 import SignUp from './pages/SignUp/SignUp';
+import Search from './search/Search';
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
         <Route path="/signup" element={<SignUp/>}/>
         <Route path="/add" element={<AddProduct/>}/>
         <Route path="/cart" element={<Cart/>}/>
-        <Route path="/:category" element={<Products/>}/>
-        <Route path="/:category/:id" element={<ProductDetail/>}/>
+        <Route path='/search' element={<Search/>}/>
+        <Route path="/products/:category" element={<Products/>}/>
+        <Route path="products/:category/:id" element={<ProductDetail/>}/>
         <Route element={<AddProduct/>}/>
       </Routes>
       <Footer/>

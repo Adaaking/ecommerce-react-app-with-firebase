@@ -33,7 +33,7 @@ const ProductDetail = () => {
         <img src={product.img} alt="" />
       </div>
       <div className="detail-right">
-        <h1>{product.name}</h1>
+        <h1 style={{fontFamily: 'Fuzzy Bubbles'}}>{product.name}</h1>
         <p>{product.desc}</p>
         <h2>color options</h2>
         <div className="colors">

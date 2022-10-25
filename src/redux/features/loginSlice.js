@@ -13,6 +13,7 @@ const loginSlice = createSlice({
         },
         logOut: (state,action) => {
             state.currentUser = null
+            localStorage.setItem("user",JSON.stringify(null))
         }
     },
 })

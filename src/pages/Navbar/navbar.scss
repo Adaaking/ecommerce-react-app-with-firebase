@@ -28,6 +28,9 @@
             padding: 15px;
             border: none;width: 50%;
         }
+        input:focus{
+            outline: none;
+        }
         button{
             padding: 15px;
             border: none;
@@ -35,6 +38,7 @@
             color: white;
             font-size: 15px;
             width: 6rem;
+            cursor: pointer;
         }
     }
     .right{

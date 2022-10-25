@@ -18,49 +18,49 @@ export const products = [
         id:1,
         name:"ELETRONICS",
         image:electronic,
-        path:'/Electronics',
+        path:'products/Electronics',
         shop:'shop now'
     },
     {
         id:2,
         name:"COMPUTER",
         image:computer,
-        path:'/Computers',
+        path:'products/Computers',
         shop:'explore now'
     },
     {
         id:3,
         name:"ARTS AND CRAFTS",
         image:arts,
-        path:'/Arts',
+        path:'products/Arts',
         shop:'see more'
     },
     {
         id:4,
         name:"SMART HOME",
         image:smarthome,
-        path:'/Home',
+        path:'products/Home',
         shop:'shop now'
     },
     {
         id:5,
         name:"MENS FASHION",
         image:mensfashion,
-        path:"/Men's",
+        path:"products/Men's",
         shop:'see more'
     },
     {
         id:6,
         name:"GIRLS FASHION",
         image:girlsfashion,
-        path:"/Girl's",
+        path:"products/Girl's",
         shop:'shop now'
     },
     {
         id:7,
         name:"KIDS FASHION",
         image:kids,
-        path:'/Kids',
+        path:'products/Kids',
         shop:'shop now'
 
     },
@@ -68,14 +68,14 @@ export const products = [
         id:8,
         name:"BOYS FASHION",
         image:boysfashion,
-        path:'/Boys',
+        path:'products/Boys',
         shop:'shop now'
     },
     {
         id:9,
         name:"TOYS",
         image:toys,
-        path:'/Toys',
+        path:'products/Toys',
         shop:'shop now'
     },
 ]
@@ -83,22 +83,22 @@ export const products = [
 export const sliders = [
     {
         id:1,
-        link:"/Computers",
+        link:"products/Computers",
         image:computers
     },
     {
         id:2,
-        link:"/Girl's",
+        link:"products/Girl's",
         image:women
     },
     {
         id:3,
-        link:"/Toys",
+        link:"products/Toys",
         image:toysandgames
     },
     {
         id:4,
-        link:"/Men's",
+        link:"products/Men's",
         image:men
     },
 ]

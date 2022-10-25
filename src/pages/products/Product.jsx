@@ -7,7 +7,7 @@ const Product = ( {product}) => {
         <img src={img} />
         <h3>{name}</h3>
         <p>{desc}</p>
-        <p style={{paddingBottom:"1rem",color:"blue"}}>{price} Birr</p>
+        <p style={{paddingBottom:"1rem",color:"blue",fontFamily: 'Fuzzy Bubbles'}}>{price} Birr</p>
     </div>
   )
 }
