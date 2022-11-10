@@ -1,7 +1,7 @@
 
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import './App.css';
-import Footer from './Footer/Footer';
+import Footer from './components/Footer/Footer';
 import AddProduct from './pages/AddProducts/AddProduct';
 import Cart from './pages/cart/Cart';
 import Home from './pages/Home/Home';
@@ -10,7 +10,7 @@ import Navbar from './pages/Navbar/Navbar';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Products from './pages/products/Products';
 import SignUp from './pages/SignUp/SignUp';
-import Search from './search/Search';
+import Search from './components/search/Search';
 
 function App() {
   return (

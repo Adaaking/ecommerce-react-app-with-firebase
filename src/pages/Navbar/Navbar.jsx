@@ -2,11 +2,11 @@ import React from "react";
 import "./navbar.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaUserAlt } from "react-icons/fa";
-import Sidebar from "../../sidebar/Sidebar";
+import Sidebar from "../../components/sidebar/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { sidebarActions } from "../../redux/features/sidebarSlice";
 import { Link, useNavigate } from "react-router-dom";
-import CartSidebar from "../../cartSidebar/CartSidebar";
+import CartSidebar from "../../components/cartSidebar/CartSidebar";
 import { cartActions } from "../../redux/features/cartSlice";
 import { loginActions } from "../../redux/features/loginSlice";
 const Navbar = () => {

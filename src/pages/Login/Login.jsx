@@ -3,7 +3,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 import "./login.scss";
 import { auth } from "../../firebase/firebase";
-import back from "../../utils/images/back5.jpg";
+import back from "../../utils/images/back8.webp";
 import { useDispatch } from "react-redux";
 import { loginActions } from "../../redux/features/loginSlice";
 import { useNavigate } from "react-router-dom";

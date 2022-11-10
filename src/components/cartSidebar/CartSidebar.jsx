@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { cartActions } from "../redux/features/cartSlice";
+import { cartActions } from "../../redux/features/cartSlice";
 import "./cartSidebar.scss";
 const CartSidebar = () => {
   const cartItems = useSelector((state) => state.cartReducer.carts);
@@ -60,7 +60,7 @@ const CartSidebar = () => {
           <hr className="hr" />
           <div className="total">
             <p>total price: <span style={{color:"red"}}>{total} birr</span></p>
-            <button onClick={() => navigate("/cart")}>CheckOut</button>
+            <button onClick={() =>dispatch(cartActions.showCart())}>CheckOut</button>
           </div>
         </>
       ) : (

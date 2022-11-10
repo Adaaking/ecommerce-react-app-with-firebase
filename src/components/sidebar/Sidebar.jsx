@@ -1,9 +1,9 @@
 import React from 'react'
-import { products } from '../utils/data/data'
+import { products } from '../../utils/data/data'
 import { Link } from 'react-router-dom'
 import './sidebar.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { sidebarActions } from '../redux/features/sidebarSlice'
+import { sidebarActions } from '../../redux/features/sidebarSlice'
 import {CgProfile} from 'react-icons/cg'
 import {IoCloseOutline} from 'react-icons/io5'
 const Sidebar = () => {
@@ -34,7 +34,7 @@ const Sidebar = () => {
           position:"absolute",
           color:"black",
           cursor:"pointer",
-          top:50,
+          top:60,
           right:2
         }}
         onClick={() => dispatch(sidebarActions.closeSidebar())}

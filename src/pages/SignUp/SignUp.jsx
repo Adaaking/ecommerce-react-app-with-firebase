@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import back from "../../utils/images/back5.jpg";
+import back from "../../utils/images/back8.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { collection, addDoc,doc,setDoc, serverTimestamp } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";

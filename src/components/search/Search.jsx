@@ -1,5 +1,5 @@
 import React from 'react'
-import Product from '../pages/products/Product'
+import Product from '../../pages/products/Product'
 import './search.scss'
 const Search = () => {
   const products = JSON.parse(localStorage.getItem("products"))
