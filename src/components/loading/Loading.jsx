@@ -1,14 +1,13 @@
-import { useSelector } from "react-redux";
-import './loading.scss'
+
+import { ScaleLoader } from 'react-spinners'
+import "./loading.scss";
 const Loading = () => {
-  const loader = useSelector(state => state.loader.IsLoading)
-  return (
-    loader&&
-      <div className="spinner-container">
-      <div className="loading-spinner">
-      </div>
-    </div>
-  )
+  return <div className="loading">
+     <ScaleLoader
+      size={200}
+      color={"green"}
+     />
+  </div>;
 };
 
 export default Loading;

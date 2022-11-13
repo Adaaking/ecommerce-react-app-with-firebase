@@ -21,17 +21,17 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         dispatch({ type: loginActions.login, payload: user });
-        navigate(-1);
+        navigate("/cart");
       })
       .catch((error) => {
-        const errorCode = error.code;
+        // const errorCode = error.code;
         setError("user not found please try again");
       });
   };
   return (
     <div className="loginContainer">
       <div className="image">
-        <img src={back}/>
+        <img src={back} alt="background"/>
       </div>
       <form onSubmit={handleSubmit}>
         <input

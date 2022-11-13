@@ -41,7 +41,7 @@ const Products = () => {
   }, [params.category,dispatch,navigate]);
   return (
     <div className="productContainer">
-      <h2 style={{marginLeft:"3rem",color:"white"}}>{params.category}</h2>
+      <h2 style={{marginLeft:"3rem",fontFamily: 'Fuzzy Bubbles'}}>{params.category}</h2>
       <div className="products">
         {products.map((product, indx) => (
           <Link to={`${product.id}`} key={indx} >

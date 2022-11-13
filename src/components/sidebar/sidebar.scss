@@ -29,6 +29,27 @@
             border-radius: 5px;
         }
     }
+    .slider-bottom{
+        display: flex;
+        align-items: center;
+        .cart-icon{
+            position: relative;
+        }
+        .cartItemNumber{
+            position: absolute;
+            top: -25px;
+            right: 6px;
+            color: red;
+        }
+        a{
+            text-decoration: none;
+            margin-left: 3rem;
+            color: black;
+        }
+        a:hover{
+           border-bottom: 2px solid coral; 
+        }
+    }
 }
 .activeSidebar{
     transform: translateX(0vw);

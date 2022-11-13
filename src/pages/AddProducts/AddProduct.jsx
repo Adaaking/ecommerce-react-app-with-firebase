@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { db, storage } from "../../firebase/firebase";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { MdFileUpload } from 'react-icons/md'
 import "./addpro.scss";
-import { uuidv4 } from "@firebase/util";
-
 const AddProduct = () => {
   const [data, setData] = useState({});
   const [file, setFile] = useState("");

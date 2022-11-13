@@ -1,7 +1,8 @@
 import React from 'react'
-import ProCard from './ProCard'
+import ProCard from '../../components/HomeComponents/ProCard'
 import './home.scss'
-import Slider from './Slider'
+import Slider from '../../components/HomeComponents/Slider'
+
 const Home = () => {
   return (
     <>

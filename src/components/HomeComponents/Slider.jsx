@@ -6,12 +6,6 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const Slider = () => {
   const [index, setIndex] = useState(0);
-  useEffect(() => {
-    let slider = setInterval(() => {
-      handleRight();
-    }, 7000);
-    return () => clearInterval(slider);
-  }, [index]);
 
   const handleRight = () => {
     if (index < sliders.length - 1) {
@@ -27,6 +21,18 @@ const Slider = () => {
       setIndex(sliders.length - 1);
     }
   };
+  useEffect(() => {
+    let slider = setInterval(() => {
+      if (index < sliders.length - 1) {
+        setIndex(index + 1);
+      } else {
+        setIndex(0);
+      }
+    }, 7000);
+    return () => clearInterval(slider);
+  }, [index]);
+
+
   return (
     <div className="slider">
       <button className="prev">
@@ -46,7 +52,7 @@ const Slider = () => {
         return (
         <div className={`wrapper ${position}`} key={slider.id}>
             <Link>
-              <img src={slider.image} />
+              <img src={slider.image} alt=""/>
             </Link>
           </div>
         );

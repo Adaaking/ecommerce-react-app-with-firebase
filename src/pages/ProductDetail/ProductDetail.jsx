@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import "./productDetail.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { loadingActions } from "../../redux/features/LoadingSlice";
 import { cartActions } from "../../redux/features/cartSlice";
 
@@ -26,7 +26,7 @@ const ProductDetail = () => {
         .catch((err) => console.log(err));
     };
     fetchDocById();
-  }, [dispatch]);
+  }, [dispatch,params.id]);
   return (
     <div className="productDetail">
       <div className="image">
@@ -37,10 +37,10 @@ const ProductDetail = () => {
         <p>{product.desc}</p>
         <h2>color options</h2>
         <div className="colors">
-          <div style={{ backgroundColor: "#9A5555" }}></div>
-          <div style={{ backgroundColor: "#4FA999" }}></div>
-          <div style={{ backgroundColor: "#371A8C" }}></div>
-          <div style={{ backgroundColor: "#0C0000" }}></div>
+          <div style={{ backgroundColor: "#9A5555",cursor:'pointer'}}></div>
+          <div style={{ backgroundColor: "#4FA999",cursor:'pointer'}}></div>
+          <div style={{ backgroundColor: "#371A8C", cursor:'pointer'}}></div>
+          <div style={{ backgroundColor: "#0C0000" ,cursor:'pointer'}}></div>
         </div>
         <h3>price: {product.price} birr</h3>
         <div className="bottom">
@@ -62,7 +62,6 @@ const ProductDetail = () => {
                   quantity: quantity,
                 })
               );
-              // navigate('/cart')
              }
             }
           >
@@ -78,7 +77,8 @@ const ProductDetail = () => {
           fontSize: "15px",
           cursor: "pointer",
           width:"50%",
-          marginLeft:"20%"
+          marginLeft:"20%",
+          borderRadius:"10px"
         }}
         onClick={() => navigate(-1)}
       >

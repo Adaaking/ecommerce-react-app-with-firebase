@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import { products } from "../../utils/data/data";
 import Card from "./Card";
-import "./home.scss";
+import "../../pages/Home/home.scss";
 const ProCard = () => {
   return (
     <div className="cardContainer">

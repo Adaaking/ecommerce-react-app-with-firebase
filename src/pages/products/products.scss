@@ -1,13 +1,13 @@
 .productContainer{
   margin-top: 4rem;
   padding-top: 1rem;
-  background-color: rgb(39, 37, 37);
 }
 .products {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
-  padding: 0 2rem;
+  padding: 2rem;
+  background-color: rgb(39, 37, 37);
   .product {
     background-color: white;
     border-radius: 10px;

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MdOutlineDelete } from "react-icons/md";
 import "./cart.scss";
 import { cartActions } from "../../redux/features/cartSlice";
 import { useNavigate } from "react-router-dom";
-import { loadingActions } from "../../redux/features/LoadingSlice";
 
 const Cart = () => {
   const carts = useSelector((state) => state.cartReducer.carts);
@@ -31,7 +30,7 @@ const Cart = () => {
           <div className="cartItems">
             {carts.map((item, indx) => (
               <div className="item" key={indx}>
-                <img src={item.img} />
+                <img src={item.img} alt="cartItem"/>
                 <p>{item.name}</p>
                 <p>{item.price}</p>
                 <p>{item.quantity}</p>
@@ -56,6 +55,7 @@ const Cart = () => {
               cursor: "pointer",
               width: "20%",
               margin: "5% 20%",
+              borderRadius:"10px"
             }}
             onClick={() => navigate("/")}
           >

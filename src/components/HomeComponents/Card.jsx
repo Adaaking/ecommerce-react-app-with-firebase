@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Card = ({product}) => {
- const {id,name,path,image,shop} = product;
+ const {name,path,image,shop} = product;
   return (
     <div className='card' style={{marginTop:"1rem"}}>
         <Link to={path}>

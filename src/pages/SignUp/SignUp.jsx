@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import back from "../../utils/images/back8.webp";
 import { Link, useNavigate } from "react-router-dom";
-import { collection, addDoc,doc,setDoc, serverTimestamp } from "firebase/firestore";
+import { collection, addDoc,serverTimestamp } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../firebase/firebase";
 import "./signup.scss";
-import { useDispatch } from "react-redux";
 
 const SignUp = () => {
-  const dispatch = useDispatch()
   const [data,setData] = useState({})
   const [error,setError] = useState()
   const navigate = useNavigate();
@@ -43,7 +41,7 @@ const SignUp = () => {
   return (
     <div className="signUp">
       <div className="image">
-        <img src={back}/>
+        <img src={back} alt="background"/>
       </div>
       <form onSubmit={handleCreate}>
         <input

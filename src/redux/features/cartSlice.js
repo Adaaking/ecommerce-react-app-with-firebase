@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Navigate } from "react-router-dom";
-import { loadingActions } from "./LoadingSlice";
 
 const cartSlice = createSlice({
     name:"carts",

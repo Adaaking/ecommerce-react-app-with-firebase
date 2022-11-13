@@ -60,7 +60,7 @@ const CartSidebar = () => {
           <hr className="hr" />
           <div className="total">
             <p>total price: <span style={{color:"red"}}>{total} birr</span></p>
-            <button onClick={() =>dispatch(cartActions.showCart())}>CheckOut</button>
+            <button onClick={() => navigate("/cart")}>your cart</button>
           </div>
         </>
       ) : (

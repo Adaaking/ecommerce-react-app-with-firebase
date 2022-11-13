@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import CartSidebar from "../../components/cartSidebar/CartSidebar";
 import { cartActions } from "../../redux/features/cartSlice";
 import { loginActions } from "../../redux/features/loginSlice";
+import { FiShoppingCart } from "react-icons/fi";
 const Navbar = () => {
   const items = useSelector((state) => state.cartReducer.carts);
   const user = useSelector((state) => state.loginReducer.currentUser);
@@ -26,13 +27,15 @@ const Navbar = () => {
       </div>
       <form className="search" onSubmit={handleSubmit}>
         <input type="text" placeholder="search by category" required />
-        <button type="submit" onClick={() => navigate("/search")}>
+        <button type="submit" onClick={() => navigate("")}>
           search
         </button>
       </form>
       {user ? (
         <div className="right">
-          <Link to="/orders"><FaUserAlt style={{fontSize:"30px",color:"coral"}}/></Link>
+          <Link to="/orders">
+            <FaUserAlt style={{ fontSize: "30px", color: "coral" }} />
+          </Link>
           <Link onClick={() => dispatch(loginActions.logOut())}>Logout</Link>
         </div>
       ) : (
@@ -41,11 +44,15 @@ const Navbar = () => {
           <Link to="/login">Login</Link>
         </div>
       )}
-      <div className="cartbtn">
-        <button onClick={() => dispatch(cartActions.showCart())}>
-          Cart: <span style={{ color: "red" }}>{items.length}</span>
-        </button>
-      </div>
+      <Link
+        className="cartbtn"
+        onClick={() => dispatch(cartActions.showCart())}
+      >
+        <FiShoppingCart
+          className="shoppingCart"
+        />
+        <p className="cartItemNumber">{items.length}</p>
+      </Link>
       <CartSidebar />
     </div>
   );

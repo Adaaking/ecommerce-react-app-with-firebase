@@ -7,7 +7,7 @@
         width: 2rem;
         border-radius: 5px;
         font-size: 20px;
-        padding: 10px;
+        padding: 5px;
     }
     image{
         display: flex;
@@ -39,7 +39,9 @@
         align-items: center;
         gap: 2rem;
         button{
-            padding: 15px;
+            padding: 10px;
+            font-size: 15px;
+            font-family:'Fuzzy Bubbles';
             border: none;
             color: white;
             cursor: pointer;

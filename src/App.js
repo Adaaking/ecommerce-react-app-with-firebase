@@ -11,10 +11,14 @@ import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Products from './pages/products/Products';
 import SignUp from './pages/SignUp/SignUp';
 import Search from './components/search/Search';
+import Loading from './components/loading/Loading';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const IsLoading = useSelector(state => state.loader.IsLoading)
   return (
     <Router>
+      {IsLoading && <Loading/>}
       <Navbar/>
       <Routes>
         <Route path="/" exact element={<Home/>}/>
